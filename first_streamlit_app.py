@@ -30,3 +30,8 @@ streamlit.write('The user entered', fruit_choice)
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "fruit_choice")
 
+#take the json version of the response and noramlize it
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+#output it the screen as a table
+# write your own comment - what does this do?
+streamlit.dataframe(fruityvice_normalized)
