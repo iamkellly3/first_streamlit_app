@@ -24,7 +24,7 @@ streamlit.dataframe(fruits_to_show)
 #new section to display fruityvice api response#
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-streamlit.text(fruityvice_response)
+streamlit.text(fruityvice_response.json()) #just writes the data to the screen
 
 #adding new header#
 streamlit.header("Fruityvice Fruit Advice!")
